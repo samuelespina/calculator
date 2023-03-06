@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button{
+    padding: 1.2rem;
+    font-size: 1.2rem;
+    border: 1px solid black;
+    color: white;
+    font-family: Share Tech Mono, monospace;
+
+}
+
+button:hover{
+    border: 1px solid white;
+    color: black;
+}
+
+.red-clear{
+    background-color: rgb(172, 57, 57);
+}
+
+.operators{
+    background-color: rgb(102, 102, 102);
+}
+
+.numbers{
+    background-color: #4d4d4d;
+}
+
+.blue-equal{
+    background-color: rgb(0, 68, 102);
+}
+
+#clear{
+    grid-area: AC;
+}
+
+#zero{
+    grid-area: zero;
+}
+
+#equals{
+    grid-area: equal;
+}
