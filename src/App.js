@@ -48,19 +48,18 @@ function App() {
     }
   }
 
+  function zeroSolve() {
+    setExpression(expression.slice(0, -1) + input.value);
+  }
+
   useEffect(() => {
-    console.log("DIO");
     if (input.value === "AC") {
-      console.log("DIO1");
       cleanAll();
     } else if (input.value === "=") {
-      console.log("DIO2");
       equal();
     } else if (expression[expression.length - 1] === "=") {
-      console.log("DIO3");
       afterEqual();
     } else if (expression[expression.length - 1] === ".") {
-      console.log("DIO4");
       dubbleDut();
     } else if (
       expression[expression.length - 1] === "+" ||
@@ -68,13 +67,10 @@ function App() {
       expression[expression.length - 1] === "*" ||
       expression[expression.length - 1] === "/"
     ) {
-      console.log("DIO5");
       operatorsSolve();
-    } else if (/^.*[\/\+*\-]0$/gm.test(expression)) {
-      console.log("DIO6");
-      setExpression(expression.slice(0, -1) + input.value);
+    } else if (/^.*[\/\+*\-]*0$/gm.test(expression)) {
+      zeroSolve();
     } else {
-      console.log("DIO7");
       setExpression(expression + input.value);
     }
   }, [input]);
